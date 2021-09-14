@@ -40,7 +40,7 @@ function findById(user_id) {
     return db('users as u')
     .join('roles as r', 'r.role_id', 'u.role_id')
     .select('user_id', 'username', 'role_name')
-    .where('r.user_id', user_id)
+    .where('user_id', user_id)
     .first();
 }
 
