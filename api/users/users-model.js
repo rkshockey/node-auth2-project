@@ -18,6 +18,9 @@ function find() {
       }
     ]
    */
+  return db('users as u')
+    .join('roles as r', 'r.role_id', 'u.role_id')
+    .select('user_id', 'username', 'role_name')
 }
 
 function findBy(filter) {
@@ -34,6 +37,7 @@ function findBy(filter) {
       }
     ]
    */
+  return 'findBy wired'
 }
 
 function findById(user_id) {
@@ -47,6 +51,7 @@ function findById(user_id) {
       "role_name": "instructor"
     }
    */
+  return 'findById wired'
 }
 
 /**
